@@ -1,5 +1,5 @@
 import { ZonasPage } from '@/components/zonas/ZonasPage'
 
-export default function Home() {
+export default function ZonasListPage() {
   return <ZonasPage />
 }
