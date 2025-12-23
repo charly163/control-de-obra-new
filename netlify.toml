@@ -1,0 +1,35 @@
+# Configuración de Netlify para Next.js
+[build]
+  publish = "out"
+  command = "npm run build"
+
+# Redirecciones para rutas dinámicas
+[[redirects]]
+  from = "/zonas/*"
+  to = "/zonas/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/escuelas/*"
+  to = "/escuelas/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/obras/*"
+  to = "/obras/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/configuracion/*"
+  to = "/configuracion/index.html"
+  status = 200
+
+# Redirección SPA para todo lo demás
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers para manejar variables de entorno
+[build.environment]
+  NODE_VERSION = "18"
