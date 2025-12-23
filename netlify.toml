@@ -32,4 +32,4 @@
 
 # Headers para manejar variables de entorno
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
