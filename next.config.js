@@ -6,6 +6,8 @@ const nextConfig = {
     }
     return config
   },
+  // Configuración para Turbopack
+  turbopack: {},
   // Configuración para Netlify
   output: 'export',
   trailingSlash: true,
