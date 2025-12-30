@@ -174,16 +174,18 @@ export function generarResumenPDF(datos: DatosPDF): void {
       tarea.fecha_fin && `Fin Real: ${formatearFecha(tarea.fecha_fin)}`
     ].filter(Boolean)
     
-    infoTarea.forEach((info: string) => {
-      doc.text(info, 25, yPosition)
-      yPosition += 4
+    infoTarea.forEach((info) => {
+      if (info) {
+        doc.text(info, 25, yPosition)
+        yPosition += 4
+      }
     })
     
     yPosition += 6 // Espacio entre tareas
   })
   
   // Pie de página
-  const pageCount = doc.internal.getNumberOfPages()
+  const pageCount = doc.internal.pages.length - 1 // jsPDF usa pages.length
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i)
     doc.setFontSize(8)
